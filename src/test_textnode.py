@@ -1,6 +1,6 @@
 import unittest
 
-from textnode import TextNode, TextType, text_node_to_html_node
+from textnode import TextNode, TextType, text_node_to_html_node, split_nodes_delimiter
 
 
 class TestTextNode(unittest.TestCase):
@@ -68,6 +68,83 @@ class TestTextNodeToHTMLNode(unittest.TestCase):
         self.assertEqual(html_node.tag, "img")
         self.assertEqual(html_node.value, "")
         self.assertEqual(html_node.props, {"src": "image.url", "alt": "alt text"})
+
+class TestSplitDelimiter(unittest.TestCase):
+    def test_no_split(self):
+        node = TextNode("This is a text node", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "`", TextType.TEXT)
+        self.assertEqual(new_nodes, [node])
+        
+    def test_code_split(self):
+        node = TextNode("This is text with a `code block` word", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "`", TextType.CODE)
+        self.assertEqual(new_nodes, [
+            TextNode("This is text with a ", TextType.TEXT),
+            TextNode("code block", TextType.CODE),
+            TextNode(" word", TextType.TEXT),   
+        ])
+
+    def test_bold_split(self):
+        node = TextNode("This is text with a **bold** word", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "**", TextType.BOLD)
+        self.assertEqual(new_nodes, [
+            TextNode("This is text with a ", TextType.TEXT),
+            TextNode("bold", TextType.BOLD),
+            TextNode(" word", TextType.TEXT),   
+        ])
+
+    def test_delimiters_at_end(self):
+        node = TextNode("This is text with last word _italic_", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "_", TextType.ITALIC)
+        self.assertEqual(new_nodes, [
+            TextNode("This is text with last word ", TextType.TEXT),
+            TextNode("italic", TextType.ITALIC),  
+        ])
+
+    def test_missing_closing_delimiter(self):
+        node = TextNode("This text is **missing* an end delimiter", TextType.TEXT)
+        with self.assertRaises(Exception) as context:
+            split_nodes_delimiter([node], "**", TextType.BOLD)
+        self.assertEqual(
+            str(context.exception), 
+            "Provided delimiter is invalid Markdown syntax (missing closing delimiter)"
+        )
+
+    def test_multiple_code_split(self):
+        node = TextNode("This is text with a `code block` word", TextType.TEXT)
+        node1 = TextNode("This is another text with a `code block` and another `code block`", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node, node1], "`", TextType.CODE)
+        self.assertEqual(new_nodes, [
+            TextNode("This is text with a ", TextType.TEXT),
+            TextNode("code block", TextType.CODE),
+            TextNode(" word", TextType.TEXT),
+            TextNode("This is another text with a ", TextType.TEXT),
+            TextNode("code block", TextType.CODE),
+            TextNode(" and another ", TextType.TEXT),
+            TextNode("code block", TextType.CODE),
+        ])
+
+    def test_empty_content(self):
+        node = TextNode("This is text with no _ _ italic word", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "_", TextType.ITALIC)
+        self.assertEqual(new_nodes, [
+            TextNode("This is text with no ", TextType.TEXT),
+            TextNode(" ", TextType.ITALIC),
+            TextNode(" italic word", TextType.TEXT),
+        ])
+
+    def test_delim_bold_and_italic(self):
+        node = TextNode("**bold** and _italic_", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "**", TextType.BOLD)
+        new_nodes = split_nodes_delimiter(new_nodes, "_", TextType.ITALIC)
+        self.assertListEqual(
+            [
+                TextNode("bold", TextType.BOLD),
+                TextNode(" and ", TextType.TEXT),
+                TextNode("italic", TextType.ITALIC),
+            ],
+            new_nodes,
+        )
 
 if __name__ == "__main__":
     unittest.main()
