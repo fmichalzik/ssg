@@ -1,6 +1,6 @@
 import unittest
 
-from markdown_to_html import markdown_to_html_node
+from markdown_to_html import markdown_to_html_node, extract_title
 
 class TestMarkdownToHtml(unittest.TestCase):
     def test_paragraphs(self):
@@ -118,6 +118,37 @@ the **same** even with inline stuff
             html,
             '<div><ol><li>"I am in fact a <b>Hobbit</b> in all but size."</li><li>This is text with a link <a href="https://www.boot.dev">to boot dev</a></li><li>J.R.R. <i>Tolkien</i></li></ol></div>'
         )
+
+class TestExtractTitle(unittest.TestCase):
+    def test_extract_title(self):
+        md = """
+# Tolkien Fan Club
+
+![JRR Tolkien sitting](/images/tolkien.png)
+
+Here's the deal, **I like Tolkien**.
+
+> "I am in fact a Hobbit in all but size."
+>
+> -- J.R.R. Tolkien
+"""
+        self.assertEqual(extract_title(md), "Tolkien Fan Club")
+
+    def test_extract_title_no_title(self):
+        md = """
+Tolkien Fan Club
+
+![JRR Tolkien sitting](/images/tolkien.png)
+
+Here's the deal, **I like Tolkien**.
+
+> "I am in fact a Hobbit in all but size."
+>
+> -- J.R.R. Tolkien
+"""
+        with self.assertRaises(Exception) as context:
+            extract_title(md)
+        self.assertEqual(str(context.exception), "No h1 header found")
 
 if __name__ == "__main__":
     unittest.main()

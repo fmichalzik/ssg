@@ -21,7 +21,7 @@ def delete_all_in_target(target_path):
         print("Delete Target: Target folder deleted.")
     else:
         print(f"Delete Target: Folder {target_path} does not exist")
-        
+
 def get_filepaths_from_source(source_path):
     # list all entries detected @ path
     # these can be files and folders
@@ -70,4 +70,17 @@ def copy_files_to_target(file_paths, target_path):
                 target_path = os.path.join(target_path, split_path[i])
                 os.mkdir(target_path)
         new_file = shutil.copy(file_path, target_path)
-        print(f"Created new file at filepath {new_file}")  
+        print(f"Created new file at filepath {new_file}")
+
+def read_from_file(path):
+    file = open(path)
+    content = file.read()
+    file.close()
+    return content
+
+def write_to_file(path, string):
+    if not os.path.exists(path):
+        os.makedirs(path)
+    file = open(f"{path}/index.html", "w")
+    file.write(string)
+    file.close()

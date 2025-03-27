@@ -64,6 +64,7 @@ def markdown_to_html_node(markdown):
                             child_nodes[i] = child_nodes[i][1:]
 
                     block = " ".join(child_nodes)
+                    block = block.strip()
 
 
                     #block = block.replace("\n", " ")
@@ -112,3 +113,14 @@ def text_to_children(text):
     for text_node in text_nodes:
         html_nodes.append(text_node_to_html_node(text_node))
     return html_nodes
+
+def extract_title(markdown):
+    # It should pull the h1 header from the markdown file 
+    # (the line that starts with a single #) and return it.
+    markdown_split = markdown.split("\n")
+    for split in markdown_split:
+        if split.startswith('# '):
+            # return the text
+            # strip the # and any leading or trailing whitespace
+            return split[2:].strip()
+    raise Exception("No h1 header found")
