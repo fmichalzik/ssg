@@ -66,10 +66,14 @@ def copy_files_to_target(file_paths, target_path):
         split_path = file_path.split("/")
         # if split_path > 2 there are subdirectories (1 beeing the source folder and 2 the file itself)
         if len(split_path) > 2:
+            subfolder_path = ""
             for i in range(1, len(split_path) - 1):
-                target_path = os.path.join(target_path, split_path[i])
-                os.mkdir(target_path)
-        new_file = shutil.copy(file_path, target_path)
+                subfolder_path = os.path.join(target_path, split_path[i])
+                if not os.path.exists(os.path.join(target_path, split_path[i])):
+                    os.mkdir(subfolder_path)
+                new_file = shutil.copy(file_path, subfolder_path)
+        else:
+            new_file = shutil.copy(file_path, target_path)
         print(f"Created new file at filepath {new_file}")
 
 def read_from_file(path):
