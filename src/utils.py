@@ -64,10 +64,10 @@ def copy_files_to_target(file_paths, target_path):
     for file_path in file_paths:
         # we need a split path in order to work with subdirectories
         split_path = file_path.split("/")
-        # if split_path > 2 there are subdirectories (1 beeing the source folder and 2 the file itself)
-        if len(split_path) > 2:
+        # if split_path > 3 there are subdirectories (1 beeing the root 2 the source folder and 3 the subfolder)
+        if len(split_path) > 3:
             subfolder_path = ""
-            for i in range(1, len(split_path) - 1):
+            for i in range(2, len(split_path) - 1):
                 subfolder_path = os.path.join(target_path, split_path[i])
                 if not os.path.exists(os.path.join(target_path, split_path[i])):
                     os.mkdir(subfolder_path)

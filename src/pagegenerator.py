@@ -3,7 +3,7 @@ from markdown_to_html import markdown_to_html_node, extract_title
 import os, pathlib
 
 # will generate a webpage using a html template and a md file
-def generate_page(from_path, template_path, dest_path):
+def generate_page(from_path, template_path, dest_path, basepath):
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
 
     # Read the markdown file / template and store it
@@ -18,12 +18,15 @@ def generate_page(from_path, template_path, dest_path):
     # replaces {{ Title }} and {{ Content }} placeholders in the template with the HTML and title
     template = template.replace("{{ Title }}", html_title).replace("{{ Content }}", html_string)
 
+    template = template.replace('href="/', 'href="' + basepath)
+    template = template.replace('src="/', 'src="' + basepath)
+
     # Writes the new full HTML page to a file at dest_path
     write_to_file(dest_path, template)
 
     print(f"Page generated")
 
-def generate_pages_recursive(from_path, template_path, dest_path):
+def generate_pages_recursive(from_path, template_path, dest_path, basepath):
     print(f"Generating pages recursivly ...")
 
     # generates list with filepaths in directory
@@ -37,12 +40,12 @@ def generate_pages_recursive(from_path, template_path, dest_path):
         # check if it is a .md file
         if os.path.isfile(current_filepath) and pathlib.Path(file).suffix == ".md":
             # if it is .md file generate page in dest_path using template
-            generate_page(current_filepath, template_path, dest_path)
+            generate_page(current_filepath, template_path, dest_path, basepath)
 
         # check if it is another directory
         elif os.path.isdir(current_filepath):
             # if it is another directory, recursion crawl in nested directory
-            generate_pages_recursive(current_filepath, template_path, target_filepath)
+            generate_pages_recursive(current_filepath, template_path, target_filepath, basepath)
 
         # if its none if the above, continue
         else:
