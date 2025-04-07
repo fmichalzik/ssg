@@ -1,46 +1,61 @@
-# Tolkien Fan Club
+# Ciao adesso 👋
 
-![JRR Tolkien sitting](/images/tolkien.png)
+![general hoodie](/images/hoodie.PNG)
 
-Here's the deal, **I like Tolkien**.
+Nach 5 1/2 Jahren adesso ist es also soweit, **ich verlasse die ais**. 😌
 
-> "I am in fact a Hobbit in all but size."
->
-> -- J.R.R. Tolkien
+Als ich damals 2019 als Junior Software Tester anfing, hätte ich nie daran gedacht, dass ich 5 1/2 Jahre bleiben würde. Als Quereinsteiger wusste ich nichts von Versicherung. Und beim Thema Softwareentwicklung und Softwaretesting stand ich noch ganz am Anfang. Dennoch gab mir die **ais** die Gelegenheit, mich als adessi zu beweisen, und steckte mich in das Team **in|sure General Policy** - zu meinem Glück. 
+Als Teil dieses genialen Teams und dieser einzigartigen Firma konnte ich lachen, streiten, feiern und scheitern. Und vor allem konnte ich unglaublich viel lernen, von einzigartigen Menschen. Über Softwarentwicklung und Testing, über Versicherung und Unternehmenssprache, über Verantwortung und Führung.
 
-## Blog posts
+Nun wage ich jedoch den nächsten Schritt auf meiner beruflichen Reise, tue dies jedoch mit einem lachenden und einem weinenden Auge. Ich freue mich natürlich darauf, meinen persönlichen und beruflichen Horizont zu erweitern. Allerdings lasse ich dafür einen tollen Arbeitgeber und viele großartige Menschen zurück. 😟
 
-- [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
-- [Why Tom Bombadil Was a Mistake](/blog/tom)
-- [The Unparalleled Majesty of "The Lord of the Rings"](/blog/majesty)
+<img align="left" alt="Pre Corona Retro" src="/images/retro.PNG" width="494px" /> <img align="right" alt="Käsekuchen-Duell" src="/images/kuchen.PNG" width="494px" />
 
-## Reasons I like Tolkien
+> Egal ob bei der (pre Corona) Retrospektive oder beim Käsekuchen-Duell ... es ist in **General** immer etwas ganz Besonderes 😄
 
-- You can spend years studying the legendarium and still not understand its depths
-- It can be enjoyed by children and adults alike
-- Disney _didn't ruin it_ (okay, but Amazon might have)
-- It created an entirely new genre of fantasy
 
-## My favorite characters (in order)
+## Immer in Erinnerung
 
-1. Gandalf
-2. Bilbo
-3. Sam
-4. Glorfindel
-5. Galadriel
-6. Elrond
-7. Thorin
-8. Sauron
-9. Aragorn
+- In Diskussion und Späße ausufernde Dailies 
+- Über Xray, SIT und Testfälle "hirnen" (@Jochen 😉)
+- Der Austausch beim Feierabend Kaltgetränken
+- Die ewige Frage: "Wer drückt auf's Knöpfchen?" 💥
+- Ein Testteam aufbauen und generell mein Wissen über iGP und Testing an andere weitergeben
+- Und natürlich jede menge geiler Events und Parties 🌴☀️ 
 
-Here's what `elflang` looks like (the perfect coding language):
+![belek](/images/party.PNG)
+
+## Einfach ein dickes Dankeschön
+
+- Danke an Henning, der mich als Quereinsteiger eingestellt hat und mir damit den Einstieg in die Softwarentwicklung ermöglichte
+- An Niclas, Hotelzimmer Buddy 😎, der immer einen guten (berufl./persönl.) Rat für mich hatte 
+- An die gesamte ais QS-Community, die Zusammenarbeit war immer ausgezeichnet
+- An Tim S. und Stephanie für die Unterstützung als ich frisch Führungskraft geworden bin
+- An jeden einzelnen Dev (insbesondere Manuel, David, Tim M., Tim W., Timo) von denen ich so viel lernen konnte 💕
+- Und natürlich Danke an jeden von euch für die lehrreiche Zusammenarbeit 🙏
+
+## Zum Abschluss
+
+Ich beginne dann meine neue Herrausforderung zum 01.05.2025 bei der [Lovion GmbH](https://lovion.de/) als Teil der [ITS Gruppe](https://its-service.de/). Ich hoffe bis dahin einige von euch nochmal sprechen zu können. Desweiteren hoffe ich, mit möglichst vielen [in Kontakt bleiben](/contact) zu können. Da es zum Phoenixsee ja auch nicht weit ist, bietet sich vll. mal die Gelegenheit für ein gemeinsames Mittag- oder Abendessen.
+
+Ansonsten, um es mit den Worten einer deutschen Musiklegende auszudrücken:
+Liebe adssi, liebe adesso, liebe ais ... 
+
+> "Falls wir uns nicht mehr wieder sehen, wünsch' ich dir viel Glück. Vielleicht komm' ich ja irgendwann sogar hierher zurück ... "
+> **Farin Urlaub**
+
+</br>
+
+Und natürlich ...
 
 ```
 func main(){
-    fmt.Println("Aiya, Ambar!")
+    fmt.Println("Das was Manuel sagt!")
 }
 ```
 
-Want to get in touch? [Contact me here](/contact).
+😁
 
-This site was generated with a custom-built [static site generator](https://www.boot.dev/courses/build-static-site-generator-python) from the course on [Boot.dev](https://www.boot.dev).
+</br>
+
+PS: Diese Seite ist mit einem custom-built Static Site Generator generiert und auf GitHub deployed. Code im [GitHub](https://github.com/fmichalzik/ssg).

@@ -1,9 +1,9 @@
-# Contact the Author
+# Wo du mich findest
 
-[< Back Home](/)
+<a href="https://linkedin.com/in/fmichalzik"><img src="/./images/linkedin.png" alt="LinkedIn Profile" style="width:200px;height:200px;">  </a><a href="https://github.com/fmichalzik"><img src="/./images/github.png" alt="GitHub Profile" style="width:200px;height:200px;"></a>
 
-Give me a call anytime to chat about Tolkien!
+Gerne auch Austausch von Email / Telefon nach Absprache 👍
 
-`555-555-5555`
+Melde dich gerne bei mir! **Bis dahin ...**
 
-**"Váya márië."**
+[< Zurück](/)

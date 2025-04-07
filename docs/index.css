@@ -1,11 +1,11 @@
 body {
-    background-color: #1f1c25;
-    color: #f0e6d1;
-    font-family: "Luminari", "Georgia", serif;
-    line-height: 1.7;
+    background-color: #1f2a41;
+    color: #ffffffee;
+    font-family: Tahoma, Verdana, sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -20,7 +20,7 @@ body {
   h4,
   h5,
   h6 {
-    color: #dda15e;
+    color: #3e81fd;
     margin-top: 24px;
     margin-bottom: 16px;
     text-shadow: 2px 2px 4px #000;
@@ -45,14 +45,14 @@ body {
   }
   
   a {
-    color: #e0a96d;
+    color: #3e81fd;
     text-decoration: none;
-    border-bottom: 2px solid #e0a96d;
+    border-bottom: 2px solid #3e81fd;
   }
   
   a:hover {
-    color: #f4a261;
-    border-color: #f4a261;
+    color: #3e81fd;
+    border-color: #3e81fd;
   }
   
   ul,
@@ -63,7 +63,7 @@ body {
   code {
     background-color: #3c3c42;
     border-radius: 6px;
-    color: #e9c46a;
+    color: #f8f7f5;
     padding: 0.4em 0.6em;
     font-family: "Courier New", monospace;
   }
