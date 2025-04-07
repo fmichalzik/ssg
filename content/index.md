@@ -34,12 +34,12 @@ Nun wage ich jedoch den nächsten Schritt auf meiner beruflichen Reise, tue dies
 - An jeden einzelnen Dev (insbesondere Manuel, David, Tim M., Tim W., Timo) von denen ich so viel lernen konnte 💕
 - Und natürlich Danke an jeden von euch für die lehrreiche Zusammenarbeit 🙏
 
-## Zum Abschluss
+## Bis dann
 
 Ich beginne dann meine neue Herrausforderung zum 01.05.2025 bei der [Lovion GmbH](https://lovion.de/) als Teil der [ITS Gruppe](https://its-service.de/). Ich hoffe bis dahin einige von euch nochmal sprechen zu können. Desweiteren hoffe ich, mit möglichst vielen [in Kontakt bleiben](/contact) zu können. Da es zum Phoenixsee ja auch nicht weit ist, bietet sich vll. mal die Gelegenheit für ein gemeinsames Mittag- oder Abendessen.
 
 Ansonsten, um es mit den Worten einer deutschen Musiklegende auszudrücken:
-Liebe adssi, liebe adesso, liebe ais ... 
+Liebe adessi, liebe adesso, liebe ais ... 
 
 > "Falls wir uns nicht mehr wieder sehen, wünsch' ich dir viel Glück. Vielleicht komm' ich ja irgendwann sogar hierher zurück ... "
 > **Farin Urlaub**
